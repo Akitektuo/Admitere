@@ -83,11 +83,20 @@ struct Heap {
 
 };
 
-void addValue(Heap& heap) {
-    cout << "Enter a value\n";
-    int val = 0;
-    cin >> val;
-    heap.add(val);
+void addValues(Heap& heap) {
+    cout << "How many values do you want to add?\n";
+    int n = 0;
+    cin >> n;
+    if (n < 1) {
+        cout << "\n";
+        return;
+    }
+    cout << "Enter the values\n";
+    for (int i = 0; i < n; i++) {
+        int val = 0;
+        cin >> val;
+        heap.add(val);
+    }
     cout << "\n";
 }
 
@@ -97,7 +106,7 @@ void popValue(Heap& heap) {
         cout << "Heap is empty...\n\n";
         return;
     }
-    cout << "The parent was " << val << "\n\n";
+    cout << "The base was " << val << "\n\n";
 }
 
 void print(Heap heap) {
@@ -110,13 +119,13 @@ void showError() {
 }
 
 void showMenu(Heap& heap) {
-    cout << "Menu\n1: add a value\n2: pop a value\n3: print heap\n";
+    cout << "Menu\n1: add values\n2: pop a value\n3: print heap\n";
     int option = 0;
     cin >> option;
     cout << "\n";
     switch (option) {
         case 1:
-            addValue(heap);
+            addValues(heap);
             break;
         case 2:
             popValue(heap);
@@ -131,6 +140,11 @@ void showMenu(Heap& heap) {
 
 int main() {
     Heap heap;
+    /*
+    heap.add(x);
+    heap.pop();
+    heap.print();
+    */
     cout << "Running...\n";
     while(true) {
         showMenu(heap);
