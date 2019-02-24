@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1548343198 source:c:\asus rog\workspace c++\admitere\dijkstrabinomialheap\main.cpp
+	<algorithm>
+	<climits>
+	<iostream>
+
