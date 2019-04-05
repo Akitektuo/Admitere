@@ -6,7 +6,7 @@ int robiGradina(int n, int t, int d[], int u[]) {
     for (int i = 1; i <= n; i++) {
         int q = 2 * d[i] + u[i] + 1;
         for (int j = q; j <= t; j += q) {
-            app[j++];
+            app[j]++;
             if(app[j] > maxi) {
                 maxi = app[j];
             }
